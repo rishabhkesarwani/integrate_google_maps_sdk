@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     
     var currentDestination: VacationDestination?
     
-    let destinations = [VacationDestination(name: "Embarcadero Station", location: CLLocationCoordinate2DMake(37.792871, -122.397055), zoom: 15), VacationDestination(name: "Ferry Building", location: CLLocationCoordinate2DMake(37.795532, -122.393451), zoom: 18)]
+    let destinations = [VacationDestination(name: "Embarcadero Bart Station", location: CLLocationCoordinate2DMake(37.792905, -122.397059), zoom: 14), VacationDestination(name: "Ferry Building", location: CLLocationCoordinate2DMake(37.795434, -122.39473), zoom: 18), VacationDestination(name: "Coit Tower", location: CLLocationCoordinate2DMake(37.802378, -122.405811), zoom: 15), VacationDestination(name: "Fisherman's Wharf", location: CLLocationCoordinate2DMake(37.808, -122.417743), zoom: 15), VacationDestination(name: "Golden Gate Bridge", location: CLLocationCoordinate2DMake(37.807664, -122.475069), zoom: 13)]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +52,7 @@ class ViewController: UIViewController {
         if currentDestination == nil {
             currentDestination = destinations.first
         } else {
-            if let index = destinations.indexOf(currentDestination!) {
+            if let index = destinations.indexOf(currentDestination!) where index < destinations.count - 1 {
                 currentDestination = destinations[index + 1]
             }
         }
